@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+    int n,key,i,low=0,high,mid;
+    printf("Enter the size of array:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the Elements of array:");
+    for (i=0;i<n;i++)
+    {
+    scanf("%d",&arr[i]);
+    }
+    printf("Enter the element to search:");
+    scanf("%d",&key);
+    high=n-1;
+    int found=0;
+    while (low<=high)
+    {
+        mid=(low+high)/2;
+        if (arr[mid]=key ){
+            printf("The Element found at the index:%d",mid                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     );
+            found =1;
+        break;
+        }
+        else if(arr[mid]<key){
+            low=mid+1;
+        }
+        else{
+            high=mid-1;
+        }
+        if (found){
+            printf("The Element is not found");
+        }
+        return 0;
+    }
+}
+    
+
