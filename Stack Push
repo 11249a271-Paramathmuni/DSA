@@ -1,0 +1,34 @@
+#include <stdio.h>
+#define MAX 5
+
+int stack[MAX], top = -1;
+
+void push(int val) {
+    if (top == MAX - 1)
+        printf("Stack Overflow\n");
+    else
+        stack[++top] = val;
+}
+
+int main() {
+    int n, val;
+
+    printf("Enter number of elements to push (max %d): ", MAX);
+    scanf("%d", &n);
+
+    if (n > MAX) {
+        printf("You can only push up to %d elements.\n", MAX);
+        n = MAX;
+    }
+    for (int i = 0; i < n; i++) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &val);
+        push(val);
+    }
+
+    printf("\nStack elements: ");
+    for (int i = 0; i <= top; i++)
+        printf("%d ", stack[i]);
+
+    return 0;
+}
