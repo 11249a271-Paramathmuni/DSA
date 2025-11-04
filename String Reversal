@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+int top=-1,max;
+char *stack;
+void push (char item)
+{
+    if(top==max-1)
+    {
+    printf("stack is over flow");
+}
+else
+{
+    top=top+1;
+    stack[top]=item;
+}
+}
+char pop()
+{
+    char item;
+    if(top==-1)
+    {printf("stack is under flow");
+    return '\0';
+    }
+    else{
+        item=stack[top];
+        top=top-1;
+        return item;
+    }
+    }
+    void stringreversal()
+    {
+        char string[max];
+        printf("please enter the string of size %d to reverse :",max);
+        scanf("%s",string);
+        for(int c=0;c<max;c++)
+        {
+            push(string[c]);
+        }
+        printf("reversed string:");
+        for (int c=0;c<max;c++)
+        {
+            printf("%c",pop());
+        }
+        }
+        int main()
+        {
+            printf("enter the size of char stack:");
+            scanf("%d",&max);
+            stack=realloc(stack,max);
+            stringreversal();
+            return 0;
+        }
