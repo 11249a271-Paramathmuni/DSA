@@ -1,3 +1,7 @@
+Aim:
+The aim is to implement a Doubly Linked List to enable bidirectional traversal and provide efficient insertion and deletion operations for dynamic data storage.
+
+Program:
 #include <stdio.h>
 #include <stdlib.h>
 
