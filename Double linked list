@@ -1,7 +1,8 @@
+/*
 Aim:
-The aim is to implement a Doubly Linked List to enable bidirectional traversal and provide efficient insertion and deletion operations for dynamic data storage.
+To create a doubly linked list in C and perform insertions, deletion, and forward/backward traversal.
+*/
 
-Program:
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -102,7 +103,7 @@ int main() {
         printf("6. Exit\n");
         printf("Enter your choice: ");
         if (scanf("%d", &choice) != 1) {
-            
+
             while (getchar() != '\n'); 
             choice = 0; 
         }
