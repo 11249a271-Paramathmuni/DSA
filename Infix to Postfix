@@ -1,3 +1,8 @@
+Aim:
+To convert an infix expression to postfix expression using stack operation.
+
+Code:
+
 #include <stdio.h>
 #include <ctype.h>
 
