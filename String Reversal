@@ -1,3 +1,8 @@
+Aim:
+To reverse a given string using stack data structure.
+
+Code:
+
 #include<stdio.h>
 #include<stdlib.h>
 int top=-1,max;
