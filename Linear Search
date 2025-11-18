@@ -1,3 +1,8 @@
+Aim:
+To implement the linear search algorithm to find the position of given element in the array.
+
+Code:
+
 #include<stdio.h>
 int main() {
     int n, i, key, found = 0;
