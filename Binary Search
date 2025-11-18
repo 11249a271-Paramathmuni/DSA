@@ -1,3 +1,7 @@
+Aim:
+To implement the binary search algorithm to find the position of given element in the array.
+ 
+Code:
 #include<stdio.h>
 int main()
 {
