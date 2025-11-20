@@ -1,25 +1,39 @@
-Aim:
-To implement the linear search algorithm to find the position of given element in the array.
 
-Code:
+/*
+  Aim:
+  Perform Linear Search on an array and locate a given element.
+*/
 
-#include<stdio.h>
+#include <stdio.h>
+
 int main() {
-    int n, i, key, found = 0;
-    printf("Enter number of elements: ");
+    int n, i, key;
+
+    // Take array size from user
+    printf("Enter size of array: ");
     scanf("%d", &n);
-    int arr[n];
+
+    int a[n];  // Create array of given size
+
+    // Read array elements
     printf("Enter elements: ");
-    for(i = 0; i < n; i++) scanf("%d", &arr[i]);
-    printf("Enter element to search: ");
-    scanf("%d", &key);
     for(i = 0; i < n; i++) {
-        if(arr[i] == key) {
+        scanf("%d", &a[i]);
+    }
+
+    // Read the element to search for
+    printf("Enter element to find: ");
+    scanf("%d", &key);
+
+    // Linear search logic: scan from left to right
+    for(i = 0; i < n; i++) {
+        if(a[i] == key) {   // Found the element
             printf("Element found at position %d\n", i + 1);
-            found = 1;
-            break;
+            return 0;
         }
     }
-    if(!found) printf("Element not found\n");
+
+    // If loop ends, element wasn’t found
+    printf("Element not found\n");
     return 0;
 }
