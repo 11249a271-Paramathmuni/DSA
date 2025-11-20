@@ -1,34 +1,45 @@
-Aim:
-To impement the stack operation on a stack and display the resulting stack elements.
-
-Code:
+/*
+  Aim:
+  Implement stack pop operation using arrays.
+*/
 
 #include <stdio.h>
-#define MAX 100
+#define MAX 5
 
-int stack[MAX], top = -1;
+int s[MAX];     // Stack array
+int top = -1;   // Top pointer
 
-void push(int x) {
-    if(top == MAX - 1) printf("Stack overflow\n");
-    else stack[++top] = x;
-}
+// Pop function: removes and returns the top element
+int pop() {
+    if(top == -1) {   // Underflow check
+        printf("Stack underflow!\n");
+        return -1;
+    }
 
-void pop() {
-    if(top == -1) printf("Stack underflow\n");
-    else printf("Popped element: %d\n", stack[top--]);
+    int item = s[top--];   // Return current top, then decrease
+    printf("Popped: %d\n", item);
+    return item;
 }
 
 int main() {
-    int n, x, i;
-    printf("Enter number of elements to push: ");
+    int n, i;
+
+    // Take initial number of elements
+    printf("How many items to initialize (max %d): ", MAX);
     scanf("%d", &n);
-    for(i = 0; i < n; i++) {
-        printf("Enter element %d: ", i + 1);
-        scanf("%d", &x);
-        push(x);
+    if(n > MAX) {
+        n = MAX;
     }
-    printf("Enter number of elements to pop: ");
-    scanf("%d", &n);
-    for(i = 0; i < n; i++) pop();
+
+    // Read elements and fill stack from bottom to top
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &s[++top]);
+    }
+
+    // Pop twice to demonstrate operation
+    pop();
+    pop();
+
     return 0;
 }
